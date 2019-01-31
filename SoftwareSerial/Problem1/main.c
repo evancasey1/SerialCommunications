@@ -27,7 +27,13 @@ void sw_serial_putc(char c)
 { 
 	// 8N1 at 9600 baud
 	// Pin 12
-	//104 and (1/6) microseconds between bits
-	
-	
+	// 104 and (1/6) microseconds between bits
+	PORTB = 0x00;
+	delay_usec(104);
+	for (int i=0; i < 8; i++) {
+		PORTB = ((c >> i) & 0x01) << 0x06;
+		delay_usec(104);	
+	}
+	PORTB = 0x40;
+	delay_usec(104);
 }
