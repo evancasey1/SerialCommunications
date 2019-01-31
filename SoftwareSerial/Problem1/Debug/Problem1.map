@@ -18,10 +18,10 @@ Discarded input sections
  .bss           0x00000000        0x0 main.o
  .text.sw_serial_putc
                 0x00000000        0x2 main.o
- .text          0x00000000       0x88 software_delay.o
+ .text          0x00000000       0x94 software_delay.o
  .data          0x00000000        0x0 software_delay.o
  .bss           0x00000000        0x0 software_delay.o
- .debug_line    0x00000000      0x199 software_delay.o
+ .debug_line    0x00000000      0x1b7 software_delay.o
  .debug_info    0x00000000       0x9b software_delay.o
  .debug_abbrev  0x00000000       0x14 software_delay.o
  .debug_aranges

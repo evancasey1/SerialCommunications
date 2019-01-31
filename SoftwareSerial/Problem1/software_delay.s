@@ -19,7 +19,7 @@ checkone: /* Check if the 32 bits of r25 and r24 are equal to 0x01, if they are,
 setzero:
 			sbr r25, 0xFF
 			sbr r24, 0xFE
-			call spacer
+			call spacer /* stall for 16 cycles */
 			nop
 			nop
 			nop

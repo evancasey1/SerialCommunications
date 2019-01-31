@@ -25,5 +25,9 @@ int main(void) {
 
 void sw_serial_putc(char c)
 { 
-	// your code...
+	// 8N1 at 9600 baud
+	// Pin 12
+	//104 and (1/6) microseconds between bits
+	
+	
 }
