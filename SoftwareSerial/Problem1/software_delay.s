@@ -19,6 +19,11 @@ checkone: /* Check if the 32 bits of r25 and r24 are equal to 0x01, if they are,
 setzero:
 			sbr r25, 0xFF
 			sbr r24, 0xFE
+			call spacer
+			nop
+			nop
+			nop
+			nop
 			jmp loopbody
 preloop:
 			cpi r24, 0x01
