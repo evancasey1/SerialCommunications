@@ -29,13 +29,13 @@ d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/g
 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libm.a(mulsf3x.o)
                               d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libm.a(mulsf3.o) (__mulsf3x)
 D:\Downloads\libEmSys.a(library.o)
-                              main.o (init_sw_serial_puts_test)
+                              main.o (init_sw_serial_putc_test)
 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
                               D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega2560/avr6/crtatmega2560.o (exit)
 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_copy_data.o)
-                              main.o (__do_copy_data)
+                              D:\Downloads\libEmSys.a(library.o) (__do_copy_data)
 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_clear_bss.o)
-                              D:\Downloads\libEmSys.a(library.o) (__do_clear_bss)
+                              SWSerial.o (__do_clear_bss)
 
 Discarded input sections
 
@@ -44,21 +44,21 @@ Discarded input sections
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
- .text          0x00000000       0x94 software_delay.o
  .data          0x00000000        0x0 software_delay.o
  .bss           0x00000000        0x0 software_delay.o
- .debug_line    0x00000000      0x1b7 software_delay.o
- .debug_info    0x00000000       0x8d software_delay.o
- .debug_abbrev  0x00000000       0x14 software_delay.o
- .debug_aranges
-                0x00000000       0x20 software_delay.o
  .text          0x00000000        0x0 SWSerial.o
  .data          0x00000000        0x0 SWSerial.o
  .bss           0x00000000        0x0 SWSerial.o
  .text.calculate_delay_time
                 0x00000000       0x28 SWSerial.o
- .text.sw_serial_putc
-                0x00000000       0x5a SWSerial.o
+ .text.get_portb_bits
+                0x00000000       0x1e SWSerial.o
+ .text.get_portb_bit_number
+                0x00000000        0x4 SWSerial.o
+ .text.init_sw_serial
+                0x00000000       0x32 SWSerial.o
+ .text.sw_serial_puts
+                0x00000000        0x2 SWSerial.o
  .text          0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libm.a(divsf3.o)
  .data          0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libm.a(divsf3.o)
  .bss           0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libm.a(divsf3.o)
@@ -132,41 +132,45 @@ Discarded input sections
  .text          0x00000000        0x0 D:\Downloads\libEmSys.a(library.o)
  .data          0x00000000        0x0 D:\Downloads\libEmSys.a(library.o)
  .bss           0x00000000        0x0 D:\Downloads\libEmSys.a(library.o)
+ .text.Serial_config
+                0x00000000      0x27e D:\Downloads\libEmSys.a(library.o)
  .text.Serial_available
                 0x00000000       0x34 D:\Downloads\libEmSys.a(library.o)
+ .text.Q_delete
+                0x00000000       0x26 D:\Downloads\libEmSys.a(library.o)
  .text.Serial_close
                 0x00000000       0x52 D:\Downloads\libEmSys.a(library.o)
+ .text.Q_create
+                0x00000000       0xb4 D:\Downloads\libEmSys.a(library.o)
+ .text.Serial_open
+                0x00000000       0x9a D:\Downloads\libEmSys.a(library.o)
  .text.Q_used   0x00000000       0x14 D:\Downloads\libEmSys.a(library.o)
  .text.Q_unused
                 0x00000000       0x1e D:\Downloads\libEmSys.a(library.o)
  .text.Q_full   0x00000000       0x14 D:\Downloads\libEmSys.a(library.o)
  .text.Q_empty  0x00000000       0x16 D:\Downloads\libEmSys.a(library.o)
+ .text.Serial_read
+                0x00000000       0x68 D:\Downloads\libEmSys.a(library.o)
  .text.Serial_write
                 0x00000000       0x78 D:\Downloads\libEmSys.a(library.o)
  .text.Serial_puts
                 0x00000000       0x4e D:\Downloads\libEmSys.a(library.o)
  .text.Serial0_poll_read
                 0x00000000       0x10 D:\Downloads\libEmSys.a(library.o)
- .text.Serial0_poll_print
-                0x00000000       0x1e D:\Downloads\libEmSys.a(library.o)
  .text.Serial1_poll_read
                 0x00000000       0x10 D:\Downloads\libEmSys.a(library.o)
  .text.Serial1_poll_write
                 0x00000000       0x10 D:\Downloads\libEmSys.a(library.o)
  .text.Serial1_poll_print
                 0x00000000       0x1e D:\Downloads\libEmSys.a(library.o)
- .text.Serial1_config
-                0x00000000      0x1fc D:\Downloads\libEmSys.a(library.o)
- .text.init_sw_serial_putc_test
-                0x00000000       0x3a D:\Downloads\libEmSys.a(library.o)
  .text.init_sw_serial_getc_test
                 0x00000000       0x2e D:\Downloads\libEmSys.a(library.o)
- .rodata.str1.1
-                0x00000000       0x63 D:\Downloads\libEmSys.a(library.o)
- .text.test_sw_serial_putc
-                0x00000000       0x60 D:\Downloads\libEmSys.a(library.o)
  .text.test_sw_serial_getc
                 0x00000000       0x50 D:\Downloads\libEmSys.a(library.o)
+ .text.init_sw_serial_puts_test
+                0x00000000       0x40 D:\Downloads\libEmSys.a(library.o)
+ .text.test_sw_serial_puts
+                0x00000000       0x54 D:\Downloads\libEmSys.a(library.o)
  .text.debug_init
                 0x00000000        0x6 D:\Downloads\libEmSys.a(library.o)
  .text.debug_hang
@@ -347,7 +351,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0xd38
+.text           0x00000000      0xbd8
  *(.vectors)
  .vectors       0x00000000       0xe4 D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega2560/avr6/crtatmega2560.o
                 0x00000000                __vector_default
@@ -455,76 +459,66 @@ END GROUP
                 0x00000122                __vector_18
                 0x00000122                __vector_20
                 0x00000122                __vector_42
-                0x00000124                . = ALIGN (0x2)
+ .text          0x00000124       0x7e software_delay.o
+                0x00000124                delay_usec
+                0x000001a2                . = ALIGN (0x2)
  *(.text.*)
- .text.main     0x00000124       0x40 main.o
-                0x00000124                main
- .text.init_sw_serial
-                0x00000164        0x2 SWSerial.o
-                0x00000164                init_sw_serial
- .text.sw_serial_puts
-                0x00000166        0x2 SWSerial.o
-                0x00000166                sw_serial_puts
- .text.Serial_config
-                0x00000168      0x27e D:\Downloads\libEmSys.a(library.o)
-                0x00000168                Serial_config
- .text.Q_delete
-                0x000003e6       0x26 D:\Downloads\libEmSys.a(library.o)
-                0x000003e6                Q_delete
- .text.Q_create
-                0x0000040c       0xb2 D:\Downloads\libEmSys.a(library.o)
-                0x0000040c                Q_create
- .text.Serial_open
-                0x000004be       0x94 D:\Downloads\libEmSys.a(library.o)
-                0x000004be                Serial_open
- .text.Q_getc   0x00000552       0x9c D:\Downloads\libEmSys.a(library.o)
-                0x00000552                Q_getc
+ .text.main     0x000001a2       0x2a main.o
+                0x000001a2                main
+ .text.sw_serial_putc
+                0x000001cc       0x78 SWSerial.o
+                0x000001cc                sw_serial_putc
+ .text.Q_getc   0x00000244       0x9c D:\Downloads\libEmSys.a(library.o)
+                0x00000244                Q_getc
  .text.__vector_26
-                0x000005ee       0x98 D:\Downloads\libEmSys.a(library.o)
-                0x000005ee                __vector_26
+                0x000002e0       0x98 D:\Downloads\libEmSys.a(library.o)
+                0x000002e0                __vector_26
  .text.__vector_37
-                0x00000686       0x98 D:\Downloads\libEmSys.a(library.o)
-                0x00000686                __vector_37
+                0x00000378       0x98 D:\Downloads\libEmSys.a(library.o)
+                0x00000378                __vector_37
  .text.__vector_52
-                0x0000071e       0x98 D:\Downloads\libEmSys.a(library.o)
-                0x0000071e                __vector_52
+                0x00000410       0x98 D:\Downloads\libEmSys.a(library.o)
+                0x00000410                __vector_52
  .text.__vector_55
-                0x000007b6       0x98 D:\Downloads\libEmSys.a(library.o)
-                0x000007b6                __vector_55
- .text.Serial_read
-                0x0000084e       0x66 D:\Downloads\libEmSys.a(library.o)
-                0x0000084e                Serial_read
- .text.Q_putc   0x000008b4       0x90 D:\Downloads\libEmSys.a(library.o)
-                0x000008b4                Q_putc
+                0x000004a8       0x98 D:\Downloads\libEmSys.a(library.o)
+                0x000004a8                __vector_55
+ .text.Q_putc   0x00000540       0x90 D:\Downloads\libEmSys.a(library.o)
+                0x00000540                Q_putc
  .text.__vector_25
-                0x00000944       0x56 D:\Downloads\libEmSys.a(library.o)
-                0x00000944                __vector_25
+                0x000005d0       0x56 D:\Downloads\libEmSys.a(library.o)
+                0x000005d0                __vector_25
  .text.__vector_36
-                0x0000099a       0x56 D:\Downloads\libEmSys.a(library.o)
-                0x0000099a                __vector_36
+                0x00000626       0x56 D:\Downloads\libEmSys.a(library.o)
+                0x00000626                __vector_36
  .text.__vector_51
-                0x000009f0       0x56 D:\Downloads\libEmSys.a(library.o)
-                0x000009f0                __vector_51
+                0x0000067c       0x56 D:\Downloads\libEmSys.a(library.o)
+                0x0000067c                __vector_51
  .text.__vector_54
-                0x00000a46       0x56 D:\Downloads\libEmSys.a(library.o)
-                0x00000a46                __vector_54
+                0x000006d2       0x56 D:\Downloads\libEmSys.a(library.o)
+                0x000006d2                __vector_54
  .text.Serial0_poll_write
-                0x00000a9c       0x10 D:\Downloads\libEmSys.a(library.o)
-                0x00000a9c                Serial0_poll_write
+                0x00000728       0x10 D:\Downloads\libEmSys.a(library.o)
+                0x00000728                Serial0_poll_write
+ .text.Serial0_poll_print
+                0x00000738       0x1c D:\Downloads\libEmSys.a(library.o)
+                0x00000738                Serial0_poll_print
  .text.Serial0_config
-                0x00000aac      0x1fc D:\Downloads\libEmSys.a(library.o)
-                0x00000aac                Serial0_config
- .text.init_sw_serial_puts_test
-                0x00000ca8       0x3c D:\Downloads\libEmSys.a(library.o)
-                0x00000ca8                init_sw_serial_puts_test
- .text.test_sw_serial_puts
-                0x00000ce4       0x50 D:\Downloads\libEmSys.a(library.o)
-                0x00000ce4                test_sw_serial_puts
-                0x00000d34                . = ALIGN (0x2)
+                0x00000754      0x1fc D:\Downloads\libEmSys.a(library.o)
+                0x00000754                Serial0_config
+ .text.Serial1_config
+                0x00000950      0x1fc D:\Downloads\libEmSys.a(library.o)
+                0x00000950                Serial1_config
+ .text.init_sw_serial_putc_test
+                0x00000b4c       0x36 D:\Downloads\libEmSys.a(library.o)
+                0x00000b4c                init_sw_serial_putc_test
+ .text.test_sw_serial_putc
+                0x00000b82       0x52 D:\Downloads\libEmSys.a(library.o)
+                0x00000b82                test_sw_serial_putc
+                0x00000bd4                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000d34        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
-                0x00000d34                _exit
-                0x00000d34                exit
+ .fini9         0x00000bd4        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
+                0x00000bd4                _exit
+                0x00000bd4                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -543,11 +537,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000d34        0x4 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
+ .fini0         0x00000bd4        0x4 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000d38                _etext = .
+                0x00000bd8                _etext = .
 
-.data           0x00800200       0x3e load address 0x00000d38
+.data           0x00800200       0x68 load address 0x00000bd8
                 0x00800200                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -561,43 +555,47 @@ END GROUP
  *(.rodata)
  *(.rodata*)
  .rodata.str1.1
-                0x00800230        0xe main.o
+                0x00800230       0x37 D:\Downloads\libEmSys.a(library.o)
+                                 0x63 (size before relaxing)
  *(.gnu.linkonce.r*)
-                0x0080023e                . = ALIGN (0x2)
-                0x0080023e                _edata = .
-                0x0080023e                PROVIDE (__data_end, .)
+                0x00800268                . = ALIGN (0x2)
+ *fill*         0x00800267        0x1 
+                0x00800268                _edata = .
+                0x00800268                PROVIDE (__data_end, .)
 
-.bss            0x0080023e      0x1a0
-                0x0080023e                PROVIDE (__bss_start, .)
+.bss            0x00800268      0x1a2
+                0x00800268                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
- .bss.sysQueue  0x0080023e       0x20 D:\Downloads\libEmSys.a(library.o)
+ .bss.delay_time
+                0x00800268        0x2 SWSerial.o
+ .bss.sysQueue  0x0080026a       0x20 D:\Downloads\libEmSys.a(library.o)
  .bss.p3_tx_buffer
-                0x0080025e       0x20 D:\Downloads\libEmSys.a(library.o)
+                0x0080028a       0x20 D:\Downloads\libEmSys.a(library.o)
  .bss.p3_rx_buffer
-                0x0080027e       0x20 D:\Downloads\libEmSys.a(library.o)
+                0x008002aa       0x20 D:\Downloads\libEmSys.a(library.o)
  .bss.p2_tx_buffer
-                0x0080029e       0x20 D:\Downloads\libEmSys.a(library.o)
+                0x008002ca       0x20 D:\Downloads\libEmSys.a(library.o)
  .bss.p2_rx_buffer
-                0x008002be       0x20 D:\Downloads\libEmSys.a(library.o)
+                0x008002ea       0x20 D:\Downloads\libEmSys.a(library.o)
  .bss.p1_tx_buffer
-                0x008002de       0x40 D:\Downloads\libEmSys.a(library.o)
+                0x0080030a       0x40 D:\Downloads\libEmSys.a(library.o)
  .bss.p1_rx_buffer
-                0x0080031e       0x40 D:\Downloads\libEmSys.a(library.o)
+                0x0080034a       0x40 D:\Downloads\libEmSys.a(library.o)
  .bss.p0_tx_buffer
-                0x0080035e       0x40 D:\Downloads\libEmSys.a(library.o)
+                0x0080038a       0x40 D:\Downloads\libEmSys.a(library.o)
  .bss.p0_rx_buffer
-                0x0080039e       0x40 D:\Downloads\libEmSys.a(library.o)
+                0x008003ca       0x40 D:\Downloads\libEmSys.a(library.o)
  *(COMMON)
-                0x008003de                PROVIDE (__bss_end, .)
-                0x00000d38                __data_load_start = LOADADDR (.data)
-                0x00000d76                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x0080040a                PROVIDE (__bss_end, .)
+                0x00000bd8                __data_load_start = LOADADDR (.data)
+                0x00000c40                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x008003de        0x0
+.noinit         0x0080040a        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x008003de                _end = .
+                0x0080040a                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -664,59 +662,64 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x1a8
+.debug_aranges  0x00000000      0x1d8
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x20 main.o
  .debug_aranges
-                0x00000020       0x38 SWSerial.o
+                0x00000020       0x20 software_delay.o
  .debug_aranges
-                0x00000058      0x150 D:\Downloads\libEmSys.a(library.o)
+                0x00000040       0x48 SWSerial.o
+ .debug_aranges
+                0x00000088      0x150 D:\Downloads\libEmSys.a(library.o)
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x21de
+.debug_info     0x00000000     0x22dc
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0xbbc D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega2560/avr6/crtatmega2560.o
- .debug_info    0x00000bbc      0x204 main.o
- .debug_info    0x00000dc0      0x1ef SWSerial.o
- .debug_info    0x00000faf     0x122f D:\Downloads\libEmSys.a(library.o)
+ .debug_info    0x00000bbc      0x188 main.o
+ .debug_info    0x00000d44       0x8d software_delay.o
+ .debug_info    0x00000dd1      0x2dc SWSerial.o
+ .debug_info    0x000010ad     0x122f D:\Downloads\libEmSys.a(library.o)
 
-.debug_abbrev   0x00000000     0x118c
+.debug_abbrev   0x00000000     0x11d0
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0xb1a D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega2560/avr6/crtatmega2560.o
- .debug_abbrev  0x00000b1a      0x11d main.o
- .debug_abbrev  0x00000c37      0x143 SWSerial.o
- .debug_abbrev  0x00000d7a      0x412 D:\Downloads\libEmSys.a(library.o)
+ .debug_abbrev  0x00000b1a       0xff main.o
+ .debug_abbrev  0x00000c19       0x14 software_delay.o
+ .debug_abbrev  0x00000c2d      0x191 SWSerial.o
+ .debug_abbrev  0x00000dbe      0x412 D:\Downloads\libEmSys.a(library.o)
 
-.debug_line     0x00000000     0x109a
+.debug_line     0x00000000     0x1291
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x1f9 D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega2560/avr6/crtatmega2560.o
- .debug_line    0x000001f9      0x139 main.o
- .debug_line    0x00000332      0x125 SWSerial.o
- .debug_line    0x00000457      0xc43 D:\Downloads\libEmSys.a(library.o)
+ .debug_line    0x000001f9      0x13b main.o
+ .debug_line    0x00000334      0x1b7 software_delay.o
+ .debug_line    0x000004eb      0x163 SWSerial.o
+ .debug_line    0x0000064e      0xc43 D:\Downloads\libEmSys.a(library.o)
 
-.debug_frame    0x00000000      0x6cc
+.debug_frame    0x00000000      0x6ec
  *(.debug_frame)
  .debug_frame   0x00000000       0x24 main.o
- .debug_frame   0x00000024       0x68 SWSerial.o
- .debug_frame   0x0000008c      0x640 D:\Downloads\libEmSys.a(library.o)
+ .debug_frame   0x00000024       0x88 SWSerial.o
+ .debug_frame   0x000000ac      0x640 D:\Downloads\libEmSys.a(library.o)
 
-.debug_str      0x00000000      0x9c2
+.debug_str      0x00000000      0xa05
  *(.debug_str)
  .debug_str     0x00000000      0x3e6 D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega2560/avr6/crtatmega2560.o
- .debug_str     0x000003e6      0x1ee main.o
-                                0x236 (size before relaxing)
- .debug_str     0x000005d4       0x38 SWSerial.o
-                                0x1ff (size before relaxing)
- .debug_str     0x0000060c      0x3b6 D:\Downloads\libEmSys.a(library.o)
+ .debug_str     0x000003e6      0x1c8 main.o
+                                0x210 (size before relaxing)
+ .debug_str     0x000005ae       0xa1 SWSerial.o
+                                0x242 (size before relaxing)
+ .debug_str     0x0000064f      0x3b6 D:\Downloads\libEmSys.a(library.o)
                                 0x5a1 (size before relaxing)
 
-.debug_loc      0x00000000     0x18d3
+.debug_loc      0x00000000     0x1a0d
  *(.debug_loc)
- .debug_loc     0x00000000       0xc5 SWSerial.o
- .debug_loc     0x000000c5     0x180e D:\Downloads\libEmSys.a(library.o)
+ .debug_loc     0x00000000      0x1ff SWSerial.o
+ .debug_loc     0x000001ff     0x180e D:\Downloads\libEmSys.a(library.o)
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -736,11 +739,11 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000      0x178
+.debug_ranges   0x00000000      0x188
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x10 main.o
- .debug_ranges  0x00000010       0x28 SWSerial.o
- .debug_ranges  0x00000038      0x140 D:\Downloads\libEmSys.a(library.o)
+ .debug_ranges  0x00000010       0x38 SWSerial.o
+ .debug_ranges  0x00000048      0x140 D:\Downloads\libEmSys.a(library.o)
 
 .debug_macro
  *(.debug_macro)
