@@ -7,6 +7,7 @@
 
 #include <avr/io.h>
 #include <stdio.h>
+#include <string.h>
 #include "SWSerial.h"
 #include "EmSys.h"
 
@@ -75,7 +76,12 @@ void init_sw_serial(int _rx_pin, int _tx_pin, long _baudrate, int _framing)
 
 void sw_serial_puts(char *str)
 {
-	// pass
+	int str_length = strlen(str);
+	for (int i=0; i < str_length; i++) 
+	{
+		sw_serial_putc(str[i]);
+		delay_usec(delay_time);
+	}
 }
 
 void sw_serial_putc(char c)
