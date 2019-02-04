@@ -24,10 +24,18 @@ int main(void) {
 	}
 }
 */
+
 int main(void) {
 	// init PORTB so that bit 6 (digital pin 12) is set for OUTPUT
+	
+	int rx_pin = 19;
+	int tx_pin = 25;
+	long baudrate = 9600L;
+	int framing = SERIAL_8N1;
+	
 	DDRB |= (1 << PB6);  // Remember that this is the DATA DIRECTION register--use PORTB to set/clear bit 6 output
-	init_sw_serial_putc_test(9600,SERIAL_8N1);
+	init_sw_serial(rx_pin, tx_pin, baudrate, framing);
+	init_sw_serial_putc_test(baudrate, framing);
 	while(1) {
 		sw_serial_putc('U');
 		test_sw_serial_putc();
