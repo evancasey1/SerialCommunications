@@ -25,9 +25,35 @@ int calculate_delay_time(long baudrate)
 
 int get_portb_bits(int pin_number)
 {
-	int to_shift = pin_number - 19;
+	int to_shift;
+	switch (pin_number) 
+	{
+		case 53:
+			to_shift = 0;
+			break;
+		case 52:
+			to_shift = 1;
+			break;
+		case 51:
+			to_shift = 2;
+			break;
+		case 50:
+			to_shift = 3;
+			break;
+		case 10:
+			to_shift = 4;
+			break;
+		case 11:
+			to_shift = 5;
+			break;
+		case 12:
+			to_shift = 6;
+			break;
+		default:
+			return -1; 
+	}
 	
-	return 1L << to_shift;
+	return 0x01 << to_shift;
 }
 
 int get_portb_bit_number(int pin)
@@ -45,7 +71,6 @@ void init_sw_serial(int _rx_pin, int _tx_pin, long _baudrate, int _framing)
 {
 	delay_time = calculate_delay_time(_baudrate);
 	tx_pin = get_portb_bits(_tx_pin);
-	rx_pin = get_portb_bits(_rx_pin);
 }
 
 void sw_serial_puts(char *str)

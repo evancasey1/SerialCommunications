@@ -29,7 +29,7 @@ int main(void) {
 	// init PORTB so that bit 6 (digital pin 12) is set for OUTPUT
 	
 	int rx_pin = 19;
-	int tx_pin = 25;
+	int tx_pin = 12;
 	long baudrate = 9600L;
 	int framing = SERIAL_8N1;
 	
