@@ -211,19 +211,19 @@ char sw_serial_getc()
 	int databits = get_num_data_bits();
 	char result = 0;
 	
-	while((PORTB & (0x1 << rx_bit_num)) >> rx_bit_num == 1)
+	while((PINB & (0x1 << rx_bit_num)) >> rx_bit_num == 1)
 	{
 		delay_usec(delay_time);
 	}
 	delay_usec(delay_time);
 	for(int i = 0; i < databits; i++)
 	{
-		result |= ((PORTB & (0x1 << rx_bit_num)) >> rx_bit_num) << i;
+		result |= ((PINB & (0x1 << rx_bit_num)) >> rx_bit_num) << i;
 		delay_usec(delay_time);
 	}
 	if (get_parity() != 0)
 	{
-		int parity = ((PORTB & (0x1 << rx_bit_num)) >> rx_bit_num);
+		int parity = ((PINB & (0x1 << rx_bit_num)) >> rx_bit_num);
 		delay_usec(delay_time);
 	}
 	delay_usec(delay_time);
