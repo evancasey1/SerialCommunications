@@ -70,12 +70,14 @@
   <avrgcc.linker.libraries.Libraries>
     <ListValues>
       <Value>libm</Value>
+      <Value>libEmSys.a</Value>
     </ListValues>
   </avrgcc.linker.libraries.Libraries>
   <avrgcc.linker.libraries.LibrarySearchPaths>
     <ListValues>
       <Value>C:\Users\Ben\Desktop\embedded\SerialCommunications\SoftwareSerial\Problem2</Value>
       <Value>C:\Users\Ben\Desktop\embedded\SerialCommunications\SoftwareSerial\Problem3</Value>
+      <Value>C:\Users\caseyem\Downloads</Value>
     </ListValues>
   </avrgcc.linker.libraries.LibrarySearchPaths>
   <avrgcc.assembler.general.IncludePaths>
@@ -117,12 +119,14 @@
   <avrgcc.linker.libraries.Libraries>
     <ListValues>
       <Value>libm</Value>
+      <Value>libEmSys.a</Value>
     </ListValues>
   </avrgcc.linker.libraries.Libraries>
   <avrgcc.linker.libraries.LibrarySearchPaths>
     <ListValues>
       <Value>C:\Users\Ben\Desktop\embedded\SerialCommunications\SoftwareSerial\Problem2</Value>
       <Value>C:\Users\Ben\Desktop\embedded\SerialCommunications\SoftwareSerial\Problem3</Value>
+      <Value>C:\Users\caseyem\Downloads</Value>
     </ListValues>
   </avrgcc.linker.libraries.LibrarySearchPaths>
   <avrgcc.assembler.general.IncludePaths>
