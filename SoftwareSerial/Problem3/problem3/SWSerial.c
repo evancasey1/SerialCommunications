@@ -10,6 +10,8 @@
 #include <string.h>
 #include "SWSerial.h"
 #include "EmSys.h"
+#define PAR_E 2
+#define PAR_O 1
 
 static int delay_time;
 static int rx_pin;
@@ -104,10 +106,109 @@ void sw_serial_putc(char c)
 	delay_usec(delay_time);
 }
 
+int get_num_data_bits()
+{
+	int result = 0;
+	switch(framing)
+	{
+		case SERIAL_8N1:
+		case SERIAL_8N2:
+		case SERIAL_8O1:
+		case SERIAL_8O2:
+		case SERIAL_8E1:
+		case SERIAL_8E2:
+			result = 8;
+			break;
+		case SERIAL_5E1:
+		case SERIAL_5E2:
+		case SERIAL_5N1:
+		case SERIAL_5N2:
+		case SERIAL_5O1:
+		case SERIAL_5O2:
+			result = 5;
+			break;
+		case SERIAL_6E1:
+		case SERIAL_6E2:
+		case SERIAL_6N1:
+		case SERIAL_6N2:
+		case SERIAL_6O1:
+		case SERIAL_6O2:
+			result = 6;
+			break;
+		case SERIAL_7E1:
+		case SERIAL_7E2:
+		case SERIAL_7N1:
+		case SERIAL_7N2:
+		case SERIAL_7O1:
+		case SERIAL_7O2:
+			result = 7;
+			break;
+		default:
+			result = -1;
+	}
+	return result;
+}
+
+int get_parity()
+{
+	int result = 0;
+	switch(framing)
+	{
+		case SERIAL_8E1:
+		case SERIAL_8E2:
+		case SERIAL_7E1:
+		case SERIAL_7E2:
+		case SERIAL_6E1:
+		case SERIAL_6E2:
+		case SERIAL_5E1:
+		case SERIAL_5E2:
+		result = PAR_E;
+		break;
+		case SERIAL_8O1:
+		case SERIAL_8O2:
+		case SERIAL_7O1:
+		case SERIAL_7O2:
+		case SERIAL_6O1:
+		case SERIAL_6O2:
+		case SERIAL_5O1:
+		case SERIAL_5O2:
+		result = PAR_O;
+		break;
+		default:
+		result = 0;
+	}
+	return result;
+}
+
+int has_extra_stop()
+{
+	int result = 0;
+	switch(framing)
+	{
+		case SERIAL_8E2:
+		case SERIAL_8O2:
+		case SERIAL_7O2:
+		case SERIAL_7E2:
+		case SERIAL_6E2:
+		case SERIAL_6O2:
+		case SERIAL_5E2:
+		case SERIAL_5O2:
+		case SERIAL_8N2:
+		case SERIAL_7N2:
+		case SERIAL_6N2:
+		case SERIAL_5N2:
+		result = 1;
+		break;
+		default:
+		result = 0;
+	}
+	return result;
+}
+
 char sw_serial_getc()
 {
 	int rx_bit_num = get_portb_bit_number(rx_pin);
-	int databits = get_num_data_bits(framing);
+	int databits = get_num_data_bits();
 	char result = 0;
 	
 	while((PORTB & (0x1 << rx_bit_num)) >> rx_bit_num == 1)
@@ -119,6 +220,16 @@ char sw_serial_getc()
 	{
 		result |= ((PORTB & (0x1 << rx_bit_num)) >> rx_bit_num) << i;
 		delay_usec(delay_time);
+	}
+	if (get_parity() != 0)
+	{
+		int parity = ((PORTB & (0x1 << rx_bit_num)) >> rx_bit_num);
+		delay_usec(delay_time);
+	}
+	delay_usec(delay_time);
+	if (has_extra_stop())
+	{
+		delay_usec(delay_time);		
 	}
 	return result;
 }
