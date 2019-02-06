@@ -6,6 +6,7 @@
  */ 
 
 #include <avr/io.h>
+#include <ctype.h>
 #include "SWSerial.h"
 #include "EmSys.h"
 
@@ -26,9 +27,23 @@ int main(void) {
 	debug_init();
 	sw_serial_getc();  // throw away first char
 	while(1) {
+		init_sw_serial(rx_pin, tx_pin, baudrate, framing);
 		char c = sw_serial_getc();
-		// convert any alpha char c to opposite case
-		// you'll need a little code here to do this...
+		// Flip character case
+		/*
+		if (isalpha(c)) 
+		{
+			if (c >= 'a' && c <= 'z')
+			{
+				c -= 32;
+			}
+			else
+			{
+				c += 32;
+			}
+			
+		}
+		*/
 		sw_serial_putc(c);
 		test_sw_serial_getc();   // library test function
 	}
