@@ -30,7 +30,6 @@ int main(void) {
 		init_sw_serial(rx_pin, tx_pin, baudrate, framing);
 		char c = sw_serial_getc();
 		// Flip character case
-		/*
 		if (isalpha(c)) 
 		{
 			if (c >= 'a' && c <= 'z')
@@ -43,7 +42,6 @@ int main(void) {
 			}
 			
 		}
-		*/
 		sw_serial_putc(c);
 		test_sw_serial_getc();   // library test function
 	}
