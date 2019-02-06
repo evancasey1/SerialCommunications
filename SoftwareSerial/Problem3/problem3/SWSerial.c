@@ -213,7 +213,7 @@ char sw_serial_getc()
 	
 	while((PINB & (0x1 << rx_bit_num)) >> rx_bit_num == 1)
 	{
-		delay_usec(delay_time);
+		delay_usec(delay_time / 3);
 	}
 	delay_usec(delay_time);
 	for(int i = 0; i < databits; i++)

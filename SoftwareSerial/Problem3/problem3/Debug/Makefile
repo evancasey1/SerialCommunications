@@ -77,7 +77,7 @@ ADDITIONAL_DEPENDENCIES:=
 OUTPUT_FILE_DEP:= ./makedep.mk
 
 LIB_DEP+=  \
-C:/Users/caseyem/Downloads/libEmSys.a
+C:/Users/Ben/Desktop/embedded/SerialCommunications/SoftwareSerial/Problem3/libEmSys.a
 
 LINKER_SCRIPT_DEP+= 
 
