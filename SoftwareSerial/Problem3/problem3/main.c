@@ -27,7 +27,6 @@ int main(void) {
 	debug_init();
 	sw_serial_getc();  // throw away first char
 	while(1) {
-		init_sw_serial(rx_pin, tx_pin, baudrate, framing);
 		char c = sw_serial_getc();
 		// Flip character case
 		if (isalpha(c)) 
